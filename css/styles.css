@@ -1,0 +1,141 @@
+body{
+  padding-top:20px;
+}
+
+#roman{
+    height:145vh;
+    max-height:145vh;
+    overflow:scroll;
+}
+
+.highlighted {
+  color: red;
+}
+
+[data-location] {
+  text-decoration: underline;
+}
+
+g {
+  background-color: #fff;
+  overflow: hidden;
+  text-overflow: hidden;
+  opacity: 0.8;
+}
+g.overlay {
+  border: 1px solid #000;
+}
+g.overlay-active {
+  border: 2px solid red;
+}
+.overlay-legend {
+  font-size: 0.5vw;
+}
+
+#roman {
+  cursor: pointer;
+}
+
+/* Icones au dessus des cartes */
+#icons {
+  display: flex;
+  position: relative;
+  margin:0 10% 2% 10%;
+  justify-content: space-between;
+
+}
+
+/* div qui est un trait qui relie les icones */
+#trait {
+  height:1px;
+  width: 100%;
+  background-color:#aabbc4;
+  position:relative;
+ 
+}
+
+/* Les icones en forme de rond */
+ .rond {
+  border-style:solid;
+  border-width:2px;
+  border-color:black;
+  z-index:1000;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2em;
+  text-align: center;
+  position: absolute;
+  margin-left: -25px;
+  background-color: #b21515;
+  border-radius: 50%;
+  }
+
+/* Animation si on hover sur les icones */
+ .rond:hover {
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+   
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+ }
+
+.rond > svg {
+  cursor: pointer;
+}
+
+/* Le texte qui s'affiche au dessus de l'icone quand on hover */
+.rond .textebubble {
+  font-size: 60%;
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 130%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.rond .textebubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.rond:hover .textebubble {
+  visibility: visible;
+}
+
+/* Emplacement des trois boutons */
+#bouton1 {
+  top:-20px;
+}
+
+#bouton2 {
+  top:-20px;
+  left:50%
+}
+
+#bouton3 {
+  top:-20px;
+  left:100%
+}
+
+
+

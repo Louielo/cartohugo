@@ -1,0 +1,149 @@
+/* Contour des SVG avec des pointillés, sauf pour les svg dans les icones */
+svg:not(.rond > svg) {
+    border-style: dashed;
+    border-width: 2px;
+    border-color: rgb(128, 128, 128);
+}
+
+.location:hover {
+	color:#b21515;
+}
+
+.location-show {
+	fill :white;
+	filter:url('#blur');
+}
+
+.location-hidden{
+    fill: white;
+    opacity:0.8;
+}
+g[class*="location"]:not(#main-hidden) {
+	cursor: pointer;
+}
+
+.opacityfull {
+	opacity : 0;
+}
+
+.itineraire-show{
+	opacity : 1;
+	cursor: pointer;
+}
+
+.itineraire-hidden{
+	opacity : 0;
+}
+
+/* Style de l'itinéraire sur la petite carte */
+#itineraire {
+	fill:none;
+	stroke:#ce1414;
+	stroke-width:5px;
+	stroke-linecap:round;
+	stroke-dasharray:20, 0;
+}
+
+/* Style des itinéraires sur la carte des iles*/
+#itineraire-long {
+	fill:none;
+	stroke:#ce1414;
+	stroke-width:16px;
+	stroke-linecap:round;
+	stroke-dasharray:50, 0;
+}
+
+/* Style de l'itinéraire en pointillé */
+#itineraire-point {
+	fill:none;
+	stroke:#2e41d1;
+	stroke-width:18px;
+	stroke-linecap:round;
+	stroke-dasharray:1, 60;
+}
+
+/* Effet de dézoom (pas utilisé) */
+.unzoom {
+	transform: scale(0.4) translate(150%, 300%); /* (150% zoom)*/
+  /*transform: translate(-50%, -50%); /* (150% zoom)*/
+	transition: transform .5s ease-in-out;
+}
+
+/* Style des drapeaux */
+.location-flaghidden{
+    fill: transparent;
+    opacity : 0;
+}
+
+.location-flagshow {	/* Drapeau rouge */
+	opacity : 1;
+	fill :red;
+	stroke-width:1.7px;
+	stroke:black;
+}
+
+.location-flagshowblue {	/* Drapeau bleu */
+	opacity : 1;
+	fill :#2f46ef;
+	stroke-width:1.7px;
+	stroke:black;
+}
+
+.location-flagshowbluebig {	/* Drapeau bleu sur la carte des iles */
+	opacity : 1;
+	fill :#2f46ef;
+	stroke-width:5.5px;
+	stroke:black;
+}
+
+
+#svglarge {
+	display: none
+}
+
+/* Zoom sur les iles à partir de la grande carte */
+#zoomisland {
+	opacity: 1;
+	fill:url(#bgisland);
+	stroke : black;
+    stroke-width : 10px;
+    display:none;
+	stroke : red;
+    stroke-width : 10px;
+}
+
+#bgisland { /* Images des iles en fond du cercle */
+	background-repeat:no-repeat;
+}
+
+/* Cercle dans lequel si l'utilisateur passe la souris, le cercle #zoomisland s'affiche */
+#zoomonhover {
+	fill :transparent;
+}
+
+#zoomonhover:hover + #zoomisland {
+  display: block;
+  stroke:black;
+}
+
+/* Icone du panneau en svg */
+#showpath {
+  width:100%;
+  height:100%;
+  background:transparent;
+  border-radius: 50%;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  outline: none;
+  fill : white;
+}
+
+/* Icone pour la carte contemporaine */
+#showcontemp {
+  width:24;
+  height:24;
+  stroke-width:1px;
+  stroke:white;
+  fill-rule:evenodd;
+  clip-rule:evenodd;
+}
